@@ -10,9 +10,10 @@
 </head>
 <body>
 <h2>hello JavaSpring Han</h2>
+http://localhost:8081/weberp/test.jsp
 <%
 java.util.Date date = new java.util.Date();
 %>
-지금 시간은 <%= date.toString()% >
+지금 시간은 <%=date.toString()%>
 </body>
 </html>
