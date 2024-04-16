@@ -2,13 +2,10 @@
 <%@taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix ="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix ="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
-<%
-    String a = "apple";
-    int len = a.length();
-/%>
-
+<c:set var = "cpath" value="%${pageContext.request.contextPath}"/>
 <c:set var="sum" value ="11"/>
+
+
 
 <!doctype html>
 <html lang="en">
@@ -20,7 +17,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href ="hello"> 경로이동 </a>
+    <a href ="${cpath}/hello"> 경로이동 </a>
     <h2>hello Java Spring Han</h2>
     http://localhost:8081/weberp/test.jsp<br/>
 
