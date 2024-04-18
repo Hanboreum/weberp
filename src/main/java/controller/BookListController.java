@@ -22,6 +22,7 @@ public class BookListController extends HttpServlet { //servlet 상속
         list.add(new Book(1,"title1",10000,"author1",120));
         list.add(new Book(2,"Java",20000,"저자",220));
         list.add(new Book(3,"title3",13000,"author3",50));
+        list.add(new Book(4,"Spring",33000,"author3",550));
         //req는 메모리다.
         //"list" -->list(번지값)
         req.setAttribute("list",list);// 객체 바인딩(중요). 뷰가 가져가게 하려고.c와 v가 특정 메모리(req) 공유
