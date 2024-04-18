@@ -21,7 +21,7 @@
   <h2>Spring MVC Framework</h2>
   <div class="card">
     <div class="card-header">Header</div>
-    <div class="card-body"> 책목록 출력하는 UI </div>
+    <div class="card-body"> 책 목록 </div>
     <h5>book list</h5>
     <table class = "table table-bordered table-hover">
         <thead>
@@ -46,7 +46,7 @@
         </tbody>
     </table>
     <button class="btn btn-sm btn-primary">등록</button>
-    <div class="card-footer">패스트캠퍼스 부트캠프 8기</div>
+    <div class="card-footer">패스트캠퍼스 부트캠프 8기_한보름</div>
   </div>
 </div>
 
