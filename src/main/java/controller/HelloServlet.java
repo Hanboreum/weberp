@@ -1,6 +1,6 @@
 package controller;
 
-import service.MyService;
+import repository.service.MyService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
