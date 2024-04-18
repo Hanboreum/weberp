@@ -1,4 +1,4 @@
-package service;
+package repository.service;
 
 public class MyService {
     public static int hap(){ //MyService.hap()
