@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 //http://localhost:8081/bookList
+//http://localhost:8081/weberp/bookList
 @WebServlet("/bookList") //url처리, GetMapping,PostMapping 역할?
 public class BookListController extends HttpServlet { //servlet 상속
 //controller(정보를 req, resp에 담는다.) -> Helloservlet. 얘도 req,resp 가 필요함
