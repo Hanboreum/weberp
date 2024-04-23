@@ -20,32 +20,32 @@
 <div class="container mt-3">
   <h2>Spring MVC Framework</h2>
   <div class="card">
-    <div class="card-header">Header</div>
+    <div class="card-header ">Header</div>
     <div class="card-body"> 책 목록 </div>
     <h5>book list</h5>
-    <table class = "table table-bordered table-hover">
+    <table class = "table table-striped table-bordered table-hover">
         <thead>
         <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>가격</th>
-        <th>저자</th>
-        <th>페이지</th>
+            <th>번호</th>
+            <th>제목</th>
+            <th>가격</th>
+            <th>저자</th>
+            <th>페이지</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var = "book" items = "${list}">
         <tr>
-         <td>${book.num}</td>
-         <td>${book.title}</td>
-         <td>${book.price}</td>
-         <td>${book.author}</td>
-         <td>${book.page}</td>
+             <td>${book.num}</td>
+             <td>${book.title}</td>
+             <td>${book.price}</td>
+             <td>${book.author}</td>
+             <td>${book.page}</td>
           </tr>
           </c:forEach>
         </tbody>
     </table>
-   <button class="btn btn-sm btn-danger" onclick="location.href='${cpath}/registerUI'">등록</button>
+   <button class="btn btn-sm btn-primary" onclick="location.href='${cpath}/registerUI'">등록</button>
     <div class="card-footer">패스트캠퍼스 부트캠프 8기_한보름</div>
   </div>
 </div>
