@@ -1,6 +1,7 @@
 package controller;
 
 import entity.Book;
+import repository.BookDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,13 +19,10 @@ public class BookListController extends HttpServlet { //servlet 상속
     @Override //service
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //DB에서 책목록 가져오기: List -> ArrayList
-        List<Book> list = new ArrayList<Book>();
-        list.add(new Book(1,"title1",10000,"author1",120));
-        list.add(new Book(2,"Java",20000,"저자",220));
-        list.add(new Book(3,"title3",13000,"author3",50));
-        list.add(new Book(4,"Spring",33000,"author3",550));
-        //req는 메모리다.
+       //req는 메모리다.
         //"list" -->list(번지값)
+        BookDAO dao =new BookDAO();
+        List<Book> list= dao.bookList();
         req.setAttribute("list",list);// 객체 바인딩(중요). 뷰가 가져가게 하려고.c와 v가 특정 메모리(req) 공유
         //여기서 html 할 수 없으니 view(jsp)와 연동 (forwarding, dispatcher) 컨트롤러와 뷰가 서로 소통
         //요청의뢰 객체를(RequestDispatcher) 얻어오는 방법
