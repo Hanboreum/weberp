@@ -5,9 +5,12 @@
 <mapper namespace="org.mybatis.example.BlogMapper">
    <select id="bookList" resultType="entity.Book">
     select * from book
+       order by price desc
    </select>
-    <insert id="insertBook"></insert>
-    <update id="updateBook"></update>
-    <delete id="deleteBook"></delete>
+
+    <insert id="bookRegister" parameterType="entity.Book">
+        insert into book( title, price, author, page)
+        values(#{title}, #{price}, #{author}, #{page})
+    </insert>
 
 </mapper>
