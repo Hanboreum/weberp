@@ -35,6 +35,14 @@ public class BookDAO { //new BookDAO
         session.close(); //반납.
         return list;
     }
+
+    public int bookRegister(Book book){
+        SqlSession session = sqlSessionFactory.openSession();
+        int cnt = session.insert("bookRegister", book);
+        session.commit(); //완료
+        session.close();
+        return cnt;
+    }
 }
 
 
