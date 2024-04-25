@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
              <label for="author">저자:</label>
-              <input type="text" class="form-control" placeholder="Enter author" id="author" nam="author">
+              <input type="text" class="form-control" placeholder="Enter author" id="author" name="author">
            </div>
            <div class="form-group">
              <label for="page">페이지수:</label>
