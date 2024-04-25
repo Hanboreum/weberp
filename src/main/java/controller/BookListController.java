@@ -27,7 +27,7 @@ public class BookListController extends HttpServlet { //servlet 상속
         req.setAttribute("list",list);// 객체 바인딩(중요). 뷰가 가져가게 하려고.c와 v가 특정 메모리(req) 공유
         //여기서 html 할 수 없으니 view(jsp)와 연동 (forwarding, dispatcher) 컨트롤러와 뷰가 서로 소통
         //요청의뢰 객체를(RequestDispatcher) 얻어오는 방법
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/views/list.jsp"); //이거 만들어서 리턴해줘야함
+        RequestDispatcher rd = req.getRequestDispatcher(ViewResolver.makeView("list")); //이거 만들어서 리턴해줘야함 (/WEB-INF/views/list.jsp")
         rd.forward(req,resp); //포워딩. 요청 의뢰됨. list.jsp.helloservlet로 넘어감
         //뷰를 만들어서 다시 jsp로 넘겨야함 어떻게 보내주나... req를 이용해?
         //forward -> list,jsp로 보내주는 작업
