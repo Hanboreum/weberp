@@ -23,6 +23,11 @@ dependencies {
     implementation 'javax.servlet:jstl:1.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //Spring WEB MVC API
+    implementation 'org.springframework:spring-webmvc:5.3.10'
+    //object -> json
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+
 }
 
 test {
