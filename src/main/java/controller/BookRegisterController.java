@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-@WebServlet("/register") //servlet mapping
+//front controller - (dispacther servlet ) : forward, redirect 제공
+//controller(서블렛이 아닌) :
+//@WebServlet("/register") //servlet mapping
 public class BookRegisterController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
