@@ -13,6 +13,7 @@ public interface BookMapper { //new BookDAO
     public List<Book> bookList(); //추상 메서드로 변환.
 
     public int bookRegister(Book book);
+    public void bookDelete(int num);
 }
 
 

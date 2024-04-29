@@ -4,9 +4,7 @@ import entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import repository.BookMapper;
 import java.util.List;
 
@@ -33,6 +31,12 @@ public class BookController { //new BookController() : spring container 에서 �
     public String registerPOST(Book book){
         //등록 성공 시 다시 list 이동 = redirect
         mapper.bookRegister(book);
+        return "redirect:/bookList";
+    }
+
+    @GetMapping("/remove")
+    public String remove(@RequestParam("num") int num){
+        mapper.bookDelete(num);
         return "redirect:/bookList";
     }
 }

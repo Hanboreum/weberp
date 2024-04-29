@@ -13,4 +13,8 @@
         values(#{title}, #{price}, #{author}, #{page})
     </insert>
 
+    <delete id="bookDelete" >
+        delete from book where num = #{num}
+    </delete>
+
 </mapper>
