@@ -22,6 +22,13 @@ public class BookController { //new BookController() : spring container 에서 �
         model.addAttribute("list",list);
         return "list"; //view의 논리적인 이름, web.xml에게 전달 -> list.jsp에게 전달 ${}forward
     }
+
+    @RequestMapping("/bookJson")
+    public @ResponseBody List<Book> list( ){
+        List<Book> list = mapper.bookList();
+        return list;
+    }
+
     @GetMapping("/register") //get등록화면
     public String registerGET(){
         return "register"; //register.jsp: forward
@@ -34,8 +41,8 @@ public class BookController { //new BookController() : spring container 에서 �
         return "redirect:/bookList";
     }
 
-    @GetMapping("/remove")
-    public String remove(@RequestParam("num") int num){
+    @GetMapping("/remove/{num}")
+    public String remove(@PathVariable int num){
         mapper.bookDelete(num);
         return "redirect:/bookList";
     }

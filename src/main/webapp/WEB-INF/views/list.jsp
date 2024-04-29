@@ -42,7 +42,7 @@
              <td>${book.price}</td>
              <td>${book.author}</td>
              <td>${book.page}</td>
-             <td><button class ="btn btn-sm btn-danger" onclick ="location.href='${cpath}/remove?num=${book.num}'">삭제 </button></td>
+             <td><button class ="btn btn-sm btn-danger" onclick ="location.href='${cpath}/remove/${book.num}'">삭제 </button></td>
           </tr>
           </c:forEach>
         </tbody>
