@@ -1,6 +1,8 @@
 package repository;
 
 import entity.Book;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -14,6 +16,9 @@ public interface BookMapper { //new BookDAO
 
     public int bookRegister(Book book);
     public void bookDelete(int num);
+    public Book getByNum( int num);
+    public void bookUpdate(@Param("num") int num, @Param("book") Book book);//(title, price, author, page, num=5)
+
 }
 
 
