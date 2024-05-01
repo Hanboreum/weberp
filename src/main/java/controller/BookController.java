@@ -26,7 +26,7 @@ public class BookController { //new BookController() : spring container 에서 �
     @RequestMapping("/bookJson")
     public @ResponseBody List<Book> list( ){
         List<Book> list = mapper.bookList();
-        return list;
+        return list; //list -> jackson -databind -> 응답
     }
 
     @GetMapping("/register") //get등록화면
@@ -41,10 +41,10 @@ public class BookController { //new BookController() : spring container 에서 �
         return "redirect:/bookList";
     }
 
-    @GetMapping("/remove/{num}")
-    public String remove(@PathVariable int num){
+    @GetMapping("/remove/{num}") //("/remove/{num}/ㄴㅇㄹ/{aaa}")
+    public String remove(@PathVariable int num){ //(@PathVariable int num, @PathVariable int aaa)
         mapper.bookDelete(num);
-        return "redirect:/bookList";
+        return "redirect:/bookList"; //삭제 성공 후 리스트 페이지로 리다이렉트
     }
 }
 //과제 : 등록과 화면 보기
