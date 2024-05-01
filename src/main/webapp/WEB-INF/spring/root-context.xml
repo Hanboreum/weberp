@@ -4,6 +4,7 @@
        xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
@@ -11,13 +12,16 @@
         <property name="username" value="root"/>
         <property name="password" value="878878"/>
     </bean>
+
     <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
           destroy-method="close">
         <constructor-arg ref="hikariConfig" />
     </bean>
 
+    <!-- repo 스캔-->
     <mybatis-spring:scan base-package="repository"/>
 
+   <!--bridge, sql 설정 -->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="mapperLocations" value="classpath:mybatis-config/mapper/BookMapper.xml" />

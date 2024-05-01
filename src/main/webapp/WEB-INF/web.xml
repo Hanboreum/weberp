@@ -23,10 +23,12 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 프론트 컨트롤러가 이 xml을 읽을 수 있도록 파라미터를 넘겨주겠다. -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/spring/root-context.xml</param-value>
     </context-param>
+
     <!-- db연결 객체 생성,
      ContextLoaderListener 는 app에서 제일 먼저 실행됨-->
     <listener>

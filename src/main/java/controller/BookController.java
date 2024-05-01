@@ -16,7 +16,7 @@ public class BookController { //new BookController() : spring container 에서 �
 
     @Autowired //DI의존성 주입
     private BookMapper mapper;
-    @RequestMapping("/bookList")
+    @RequestMapping("/bookList") //handler mapping이 연결
     public String list(Model model){
         List<Book> list = mapper.bookList();
         model.addAttribute("list",list);

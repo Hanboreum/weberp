@@ -9,7 +9,7 @@ import java.util.List;
 //JDBC -> MyBatis -> Spring My Batis -> Hibernate(OPM) -> JPA
 //JDBC -> Java + SQL = 유지보수 어려움. 생산성 떨어짐
 //MyBatis -> SQL과 JAVA를 분리, 매핑 시켜준다.
-public interface BookMapper { //new BookDAO
+public interface BookMapper { //repository
 
     //CRUD
     public List<Book> bookList(); //추상 메서드로 변환.
