@@ -22,6 +22,7 @@
   <div class="card">
     <div class="card-header ">
 
+   <c:if test="${empty dbmem}">
   <form class="form-inline" action="${cpath}/login" method="post">
     <label for="username">아이디:</label>
     <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
@@ -29,7 +30,14 @@
     <input type="password" class="form-control" placeholder="Enter password" id="password" name="password">
     <button type="submit" class="btn btn-primary btn-sm">로그인</button>
   </form>
+   </c:if>
 
+   <c:if test="${!empty dbmem}">
+    <form class="form-inline" action="${cpath}/logout" method="post">
+        <label>welcome! ${dbmem.name} 방문을 환영합니다. </label>
+         <button type="submit" class="btn btn-primary btn-sm">로그아웃</button>
+      </form>
+   </c:if>
 
     </div>
     <div class="card-body"> 책 목록 </div>
