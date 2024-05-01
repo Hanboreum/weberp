@@ -3,6 +3,7 @@ package controller;
 import entity.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,5 +30,11 @@ public class LoginController {
             session.setAttribute("dbmem", dbmem); //인증 성공시 ,객체 바인딩. ${! empty dbmem} -> ${dbmem.name}
          }
         return "redirect:/bookList"; //시작 페이지로
+    }
+
+    @PostMapping("/logout")
+    public String logout(HttpSession httpSession){
+        httpSession.invalidate(); //무효화. 세셩 끊기
+        return "redirect:/bookList";
     }
 }
